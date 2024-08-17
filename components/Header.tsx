@@ -46,14 +46,16 @@ const Header = () => {
 
   return (
     <header className="flex flex-row items-center justify-between p-3.5 w-full">
-      <div className="flex flex-row items-center gap-x-8">
+      <div className="flex flex-row items-center gap-2 lg:gap-10" >
         <Image
           src="/Images/disney-logo.png"
           alt="logo disney plus"
           width={80}
           height={80}
+          priority
+          className="w-auto h-auto"
         />
-        <div className="hidden lg:flex flex-row items-center gap-3">
+        <div className="hidden lg:flex flex-row items-center gap-2">
           {menu.map((liste) => (
             <HeaderMenu
               key={liste.name}
@@ -62,7 +64,7 @@ const Header = () => {
             />
           ))}
         </div>
-        <div className="flex flex-row items-center gap-3 lg:hidden">
+        <div className="flex flex-row items-center gap-2 lg:hidden">
           {menu.map(
             (item, index) =>
               index < 3 && (
@@ -73,10 +75,30 @@ const Header = () => {
                 />
               )
           )}
+          <Menubar className="border-none text-white -mx-3">
+            <MenubarMenu>
+              <MenubarTrigger className="text-lg" value="bouton_menu" tabIndex={-1} aria-label="bouton_menu" id="bouton_menu" title="bouton_menu"><BsThreeDotsVertical /></MenubarTrigger>
+              <MenubarContent className="border-none">
+                {menu.map(
+                  (item, index) =>
+                    index > 3 && (
+                      <MenubarItem className="text-white flex flex-col justify-center items-center">
+                        <HeaderMenu
+                          key={item.name}
+                          name={item.name}
+                          icone={item.icone}
+                        />
+                      </MenubarItem>
+                    )
+                )}
+              </MenubarContent>
+            </MenubarMenu>
+          </Menubar>
+
         </div>
       </div>
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
+        <AvatarImage src="https://github.com/shadcn.png" alt="image de profil"/>
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </header>
