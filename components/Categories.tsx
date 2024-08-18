@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import GetApi from '@/services/GetApi';
+import CategorieAction from './CategorieAction';
 
 const Categories = () => {
 
@@ -13,20 +14,11 @@ const Categories = () => {
     }, []);
 
     //console.log(data);
-
-    const cat = data.map((cate: { genre_ids: number }) => (
-        cate.genre_ids
-    ));
-
-  
-
-    console.log(cat);
    
-
 
     return (
         <div className='border w-full'>
-
+            <CategorieAction elem={data}/>
         </div>
     )
 }
