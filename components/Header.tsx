@@ -82,7 +82,7 @@ const Header = () => {
                 {menu.map(
                   (item, index) =>
                     index > 3 && (
-                      <MenubarItem className="text-white flex flex-col justify-center items-center">
+                      <MenubarItem className="text-white flex flex-col justify-center items-center bg-black w-1/2 relative left-12">
                         <HeaderMenu
                           key={item.name}
                           name={item.name}
