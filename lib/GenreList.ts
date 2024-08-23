@@ -40,10 +40,6 @@ const GenreList= [
       "name": "Mystery"
     },
     {
-      "id": 10749,
-      "name": "Romance"
-    },
-    {
       "id": 878,
       "name": "Science Fiction"
     },

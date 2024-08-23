@@ -39,18 +39,18 @@ const CategorieGenre = (props: Props) => {
           align: "start",
         }}
           className="h-[250px] scroll-smooth w-full relative">
-          <CarouselContent className="w-full h-[150px] lg:h-[200px] m-0 p-0">
+          <CarouselContent className="w-full h-[150px] lg:h-[200px] m-0 p-0 s">
             { data.map((item) => (
-              <CarouselItem key={item.poster_path} className=" basis-1/3 md:basis-1/4 lg:basis-1/6 w-[100%] h-full m-0 p-2 relative hover:scale-105 transition ease-linear">
+              <CarouselItem key={item.poster_path} className=" basis-1/3 md:basis-1/4 lg:basis-1/6 w-[100%] h-full m-0 p-2 relative hover:scale-105 transition ease-linear slider__content">
                 <div className="w-[100%] h-full cursor-pointer  hover:border border-cyan-500">
                   <Image src={`${GetApi.ImageBaseUrl}${item.poster_path}`} width={1500} height={1500} alt={item.poster_path} priority className="w-full h-full" />
                 </div>
-                <p className="absolute text-white top-3/4 -translate-y-1/2 left-5">{item.title}</p>
+                <p className="absolute text-white top-3/4 -translate-y-1/2 left-5 text-balance">{item.title}</p>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className='hidden lg:flex hover:scale-150 absolute top-[40%] -translate-y-1/2' />
-          <CarouselNext className='hidden lg:flex hover:scale-150 absolute top-[40%] -translate-y-1/2' />
+          <CarouselPrevious className={(data.length>3)?'hidden lg:flex hover:scale-150 absolute top-[40%] -translate-y-1/2 next':"hidden"} />
+          <CarouselNext className={(data.length>3)?'hidden lg:flex hover:scale-150 absolute top-[40%] -translate-y-1/2 next':"hidden"} />
         </Carousel>
       </div>
     </div>

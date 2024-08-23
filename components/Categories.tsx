@@ -20,7 +20,7 @@ const Categories = () => {
         <div className='w-full flex flex-col items-center p-1.5'>
             {GenreList.map((item: { id: number, name: string }) => {
                 return (
-                    < CategorieGenre elem={data} genre={item} />
+                    < CategorieGenre key={item.id} elem={data} genre={item} />
                 )
             }
             )}

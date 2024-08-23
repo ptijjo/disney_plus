@@ -97,7 +97,7 @@ const Header = () => {
 
         </div>
       </div>
-      <Avatar>
+      <Avatar className="cursor-pointer">
         <AvatarImage src="https://github.com/shadcn.png" alt="image de profil" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
