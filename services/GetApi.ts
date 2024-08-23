@@ -7,10 +7,12 @@ const movieByGenreBaseURL = "https://api.themoviedb.org/3/discover/movie?api_key
 
 const ImageBaseUrl = "http://image.tmdb.org/t/p/original";
 
-const getVideos = axios.get(`${movieBaseUrl}${process.env.NEXT_PUBLIC_API_KEY}`);
+const key = "4cf28ecda7bd425d147da24a188d44e9";
+
+const getVideos = axios.get(`${movieBaseUrl}${key}`);
 
 const getMovieById = (id:number) => {
-    axios.get(`${movieByGenreBaseURL}${process.env.NEXT_PUBLIC_API_KEY}&with_genres=${id}}`)
+    axios.get(`${movieByGenreBaseURL}${key}&with_genres=${id}}`)
 };
 
 
