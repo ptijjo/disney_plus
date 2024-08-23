@@ -50,8 +50,8 @@ const Header = () => {
         <Image
           src="/Images/disney-logo.png"
           alt="logo disney plus"
-          width={80}
-          height={80}
+          width={50}
+          height={50}
           priority
           className="w-auto h-auto"
         />
