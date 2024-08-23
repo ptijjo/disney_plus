@@ -46,7 +46,7 @@ const Header = () => {
 
   return (
     <header className="flex flex-row items-center justify-between p-3.5 w-full">
-      <div className="flex flex-row items-center gap-2 lg:gap-10" >
+      <div className="flex flex-row items-center gap-2 lg:gap-10 cursor-pointer" >
         <Image
           src="/Images/disney-logo.png"
           alt="logo disney plus"

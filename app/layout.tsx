@@ -19,7 +19,6 @@ export default function RootLayout({
         <div className="bg-black flex flex-col w-full my-0 mx-auto text-white items-center">
           <Header />
           {children}
-          <Footer />
         </div>
       </body>
     </html>

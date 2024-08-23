@@ -1,8 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import GetApi from '@/services/GetApi';
-import CategorieAction from './CategorieAction';
-
+import CategorieGenre from './CategorieGenre';
+import GenreList from '@/lib/GenreList';
 const Categories = () => {
 
     const [data, setData] = useState([]);
@@ -13,12 +13,18 @@ const Categories = () => {
             .catch(error => console.error(`Oups une erreur s'est produite 🤯 : ${error}`))
     }, []);
 
-    //console.log(data);
-   
+
+
 
     return (
-        <div className='border w-full'>
-            <CategorieAction elem={data}/>
+        <div className='w-full flex flex-col items-center p-1.5'>
+            {GenreList.map((item: { id: number, name: string }) => {
+                return (
+                    < CategorieGenre elem={data} genre={item} />
+                )
+            }
+            )}
+
         </div>
     )
 }
