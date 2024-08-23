@@ -32,8 +32,8 @@ const CategorieGenre = (props: Props) => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <h2 className="text-2xl flex w-full px-14 hover:underline underline-offset-8 cursor-pointer">{props.genre.name}</h2>
+    <div className="flex flex-col items-center justify-center w-full h-[200px] lg:h-[250px]">
+      <h2 className="text-2xl flex w-full lg:px-14 hover:underline underline-offset-8 cursor-pointer">{props.genre.name}</h2>
       <div className='h-full w-full lg:w-[90%] flex flex-row'>
         <Carousel opts={{
           align: "start",
@@ -41,7 +41,7 @@ const CategorieGenre = (props: Props) => {
           className="h-[250px] scroll-smooth w-full relative">
           <CarouselContent className="w-full h-[150px] lg:h-[200px] m-0 p-0">
             { data.map((item) => (
-              <CarouselItem key={item.id} className=" basis-1/3 md:basis-1/4 lg:basis-1/6 w-[100%] h-full m-0 p-2 relative hover:scale-105 transition ease-linear">
+              <CarouselItem key={item.poster_path} className=" basis-1/3 md:basis-1/4 lg:basis-1/6 w-[100%] h-full m-0 p-2 relative hover:scale-105 transition ease-linear">
                 <div className="w-[100%] h-full cursor-pointer  hover:border border-cyan-500">
                   <Image src={`${GetApi.ImageBaseUrl}${item.poster_path}`} width={1500} height={1500} alt={item.poster_path} priority className="w-full h-full" />
                 </div>

@@ -11,8 +11,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
@@ -47,14 +45,16 @@ const Header = () => {
   return (
     <header className="flex flex-row items-center justify-between p-3.5 w-full">
       <div className="flex flex-row items-center gap-2 lg:gap-10 cursor-pointer" >
-        <Image
-          src="/Images/disney-logo.png"
-          alt="logo disney plus"
-          width={50}
-          height={50}
-          priority
-          className="w-auto h-auto"
-        />
+        <div className="w-[50px] lg:w-[80px]">
+          <Image
+            src="/Images/disney-logo.png"
+            alt="logo disney plus"
+            width={80}
+            height={80}
+            priority
+            className="w-full h-full"
+          />
+        </div>
         <div className="hidden lg:flex flex-row items-center gap-2">
           {menu.map((liste) => (
             <HeaderMenu
@@ -98,7 +98,7 @@ const Header = () => {
         </div>
       </div>
       <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" alt="image de profil"/>
+        <AvatarImage src="https://github.com/shadcn.png" alt="image de profil" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </header>
